@@ -1,6 +1,6 @@
 $(document).ready(function () {
-  $('searchBtn').click(function () {
-    let searchInput = $('#search-input').val();
+  $('#searchBtn').click(function () {
+    const searchInput = $('#search-input').val();
     console.log(searchInput);
   });
 
