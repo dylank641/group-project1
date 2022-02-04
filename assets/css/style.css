@@ -1,0 +1,70 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1;
+}
+
+header h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+}
+
+.teaser {
+    display: flex;
+    justify-content: center;
+}
+
+.call-to-action {
+    display: flex;
+    justify-content: center;
+}
+
+.choose-city {
+    display: flex;
+    justify-content: center;
+}
+
+.past-searches {
+    display: flex;
+    justify-content: center;
+}
+
+.selected-city {
+    display: flex;
+    justify-content: center;
+}
+
+.weather {
+    display: flex;
+    justify-content: center;
+}
+
+.pictures {
+    display: flex;
+    justify-content: center;
+}
+
+.restaurants {
+    display: flex;
+    justify-content: center;
+}
+
+.hotels {
+    display: flex;
+    justify-content: center;
+}
+
+.things-to-do {
+    display: flex;
+    justify-content: center;
+}
+
+footer p {
+    display: flex;
+    justify-content: center;
+}
