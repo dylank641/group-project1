@@ -3,10 +3,10 @@ $(document).ready(function () {
     const searchInput = $('#search-input').val();
     console.log(searchInput);
 
-    let getCityWeather = function () {
+    const getCityWeather = function () {
       // format the api url
-      let apiUrl =
-        'api.openweathermap.org/data/2.5/forecast?q=' +
+      const apiUrl =
+        'https://api.openweathermap.org/data/2.5/forecast?q=' +
         searchInput +
         '&appid=5487746d0675bbfe431f4c709399c088';
 
@@ -19,7 +19,4 @@ $(document).ready(function () {
     };
     getCityWeather();
   });
-  // api call FORMAT pro.openweathermap.org/data/2.5/forecast/hourly?lat={lat}&lon={lon}&appid={API key}
-
-  // api call EXAMPLE pro.openweathermap.org/data/2.5/forecast/hourly?lat=35&lon=139&appid=5487746d0675bbfe431f4c709399c088
 });
