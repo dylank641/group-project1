@@ -1,7 +1,6 @@
 $(document).ready(function () {
   $('#searchBtn').click(function () {
     const searchInput = $('#search-input').val();
-    console.log(searchInput);
 
     const getCityWeather = function () {
       // format the api url
@@ -19,4 +18,9 @@ $(document).ready(function () {
     };
     getCityWeather();
   });
+
+  const displayWeather = function () {
+    const weatherContainer = $('#results-container');
+    const citySearchTerm = $('#city-search-term');
+  };
 });
