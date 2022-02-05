@@ -31,8 +31,7 @@ var getPhotos = function (city, state) {
         console.log(data);
         printPhotos(data.hits);
       });
-      // };
-      // console.log(response);
+      
     }
   });
 };

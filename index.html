@@ -89,7 +89,7 @@
                     <option value="Wyoming">Wyoming</option>
                   </select>
                 </form>
-                <button type="submit" class="search-btn" id="searchBtn">
+                <button type= "submit" class= "search-btn" id= "searchBtn">
                   Search
                 </button>
             </form>
@@ -99,12 +99,12 @@
 
     <!-- Results Page AKA:Second Page -->
     <div id="second-page">
-
+      <!-- Displays City Name -->
       <div class="text-center">
-        <!-- Need to update using JS -->
         <h2 id="selected-city"></h2>
         <hr>
       </div>
+      <!-- Contains Cards for Information -->
       <article class="grid-container">
         <div class="grid-x grid-margin-x small-up-2 medium-up-2 large-up-4" id="big-3">
           <div class="card">
@@ -113,7 +113,12 @@
             </div>
             <img src="assets/images/weather2.png"class="thumbnail" > 
             <h5 id="results-container">Update content on line 139</h5>
-            <p>subtext</p>
+            <div class="weather">
+              <p class='weather-current'></p>
+              <p class="weather-min"></p>
+              <p class="weather-max"></p>
+              <p class="description"></p>
+            </div>
           </div>
           <div class="card cell">
             <div class ="card-divider">
@@ -144,12 +149,24 @@
           <div class="grid-x grid-margin-x small-up-2 medium-up-3 large-up-6">
             <div class="cell" id="photos-page">
               <!-- <img class="thumbnail" src="https://placehold.it/300x400"> -->
+              <!-- <h5>Nulla At Nulla Justo, Eget</h5> -->
+              <!-- <p>$400</p> -->
+              <!-- <a href="#" class="button small expanded hollow">Buy</a> --> -->
+            <!-- </div> -->
+            <!-- <div class="cell"> --> --> -->
+              <!-- <img class="thumbnail" src="https://placehold.it/300x400">
               <!-- <h5>Nulla At Nulla Justo, Eget</h5>
               <p>$400</p>
               <a href="#" class="button small expanded hollow">Buy</a> -->
             <!-- </div>
             <div class="cell"> -->
               <!-- <img class="thumbnail" src="https://placehold.it/300x400"> -->
+              <!-- <h5>Nulla At Nulla Justo, Eget</h5>
+              <p>$400</p>
+              <a href="#" class="button small expanded hollow">Buy</a> -->
+            <!-- </div>
+            <div class="cell">
+              <img class="thumbnail" src="https://placehold.it/300x400">
               <!-- <h5>Nulla At Nulla Justo, Eget</h5>
               <p>$400</p>
               <a href="#" class="button small expanded hollow">Buy</a> -->
@@ -164,19 +181,7 @@
               <img class="thumbnail" src="https://placehold.it/300x400"> -->
               <!-- <h5>Nulla At Nulla Justo, Eget</h5>
               <p>$400</p>
-              <a href="#" class="button small expanded hollow">Buy</a> -->
-            <!-- </div>
-            <div class="cell"> -->
-              <!-- <img class="thumbnail" src="https://placehold.it/300x400"> -->
-              <!-- <h5>Nulla At Nulla Justo, Eget</h5>
-              <p>$400</p>
-              <a href="#" class="button small expanded hollow">Buy</a> -->
-            <!-- </div>
-            <div class="cell">
-              <img class="thumbnail" src="https://placehold.it/300x400"> -->
-              <!-- <h5>Nulla At Nulla Justo, Eget</h5>
-              <p>$400</p>
-              <a href="#" class="button small expanded hollow">Buy</a> -->
+              <a href="#" class="button small expanded hollow">Buy</a>
             </div>
           </div>
       
@@ -307,11 +312,9 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.js"></script>
-    <script>
-      $(document).foundation();
-    </script>
     <script src="/assets/js/weatherscript.js"></script>
     <script src="/assets/js/script.js"></script>
+    <script>$(document).foundation()</script>
   </body>
 
 </html>
