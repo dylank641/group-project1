@@ -31,8 +31,7 @@ var getPhotos = function (city, state) {
         console.log(data);
         printPhotos(data.hits);
       });
-      // };
-      // console.log(response);
+      
     }
   });
 };
@@ -46,4 +45,10 @@ $('#searchBtn').on('click', function (event) {
 
   getPhotos(city, state);
   event.preventDefault();
+});
+
+$('#newSearch').on('click', function (event) {
+  secondPageEl.className += ' hide';
+  firstPageEl.classList.remove('hide');
+  
 });
