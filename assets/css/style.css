@@ -68,3 +68,11 @@ footer p {
     display: flex;
     justify-content: center;
 }
+
+.searchBtn {
+    border: 1px red solid;
+    z-index: 100;
+}
+.hide {
+    display: none;
+}
