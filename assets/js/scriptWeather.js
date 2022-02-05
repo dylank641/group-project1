@@ -11,7 +11,7 @@ $(document).ready(function () {
     const searchInput = $('#city-input').val();
 
     const displayWeather = function (data) {
-      const weather = data.weather;
+      const description = data.weather[0];
       const main = data.main;
 
       //  main has been renamed to mainArr
@@ -20,6 +20,7 @@ $(document).ready(function () {
       $('.weather-current').html('Now: ' + main.temp);
       $('.weather-min').html('Low: ' + main.temp_min);
       $('.weather-max').html('High: ' + main.temp_max);
+      $('.description').html(description.description);
     };
 
     const getCityWeather = function () {
