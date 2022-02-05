@@ -11,18 +11,13 @@ $(document).ready(function () {
     const searchInput = $('#city-input').val();
 
     const displayWeather = function (data) {
-      const weather = data.weather;
+      const description = data.weather[0];
       const main = data.main;
-
-      //  main has been renamed to mainArr
-      // const { coord, weather, main: mainArr } = data;
 
       $('.weather-current').html('Now: ' + main.temp);
       $('.weather-min').html('Low: ' + main.temp_min);
       $('.weather-max').html('High: ' + main.temp_max);
-
-      // var convertMain = (main.temp - 273.15) * (9/5) + 32;
-      // console.log(convertMain);
+      $('.description').html(description.description);
     };
 
     const getCityWeather = function () {
