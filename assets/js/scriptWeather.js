@@ -14,9 +14,6 @@ $(document).ready(function () {
       const description = data.weather[0];
       const main = data.main;
 
-      //  main has been renamed to mainArr
-      // const { coord, weather, main: mainArr } = data;
-
       $('.weather-current').html('Now: ' + main.temp);
       $('.weather-min').html('Low: ' + main.temp_min);
       $('.weather-max').html('High: ' + main.temp_max);
