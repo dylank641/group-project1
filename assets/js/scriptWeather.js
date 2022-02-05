@@ -1,15 +1,3 @@
-// // using enter to submit search
-// // targetting input field
-// var input = document.getElementById('city-input');
-
-// // execute search when user releases enter key
-// input.addEventListener('keyup', function (event) {
-//   if (event.keyCode === 13) {
-//     event.preventDefault();
-//     document.getElementsByClassName('search-btn').click();
-//   }
-// });
-
 $(document).ready(function () {
   // enter click to submit
   $('#city-input').keydown(function (event) {
