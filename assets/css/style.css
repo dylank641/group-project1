@@ -89,4 +89,13 @@ body{
     font-size: 18px;
 }
 
+#things-to-do-results {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.card-divider {
+    color: white;
+}
 

@@ -64,6 +64,29 @@ var refreshApp = function() {
   }
 }
 
+// remove old script elements: this is for the google searches
+function removeOldScripts() {
+  $("script").each(function() {
+    if (this.id.includes("googleScript")) {
+      this.parentNode.removeChild(this);
+    }
+  })
+}
+
+// handler for the Things to Do google search
+function handleThingsToDo(response) {
+  console.log(response);
+  var thingsToDoEl = document.getElementById("things-to-do-results");
+  for (var i = 0; i < 5; i++) {
+    var item = response.items[i];
+    var index = i + 1;
+    var header = "<a href='" + item.image.contextLink + "' target='_blank'>Check it out</a>";
+    var imageURL = item.link;
+    var content = "<p>" + item.htmlTitle + "</p>";
+    thingsToDoEl.innerHTML += "<div class='card'><div class='card-divider'>" + header + "</div><img src='" + imageURL + "'><div class='card-section'>" + content + "</div></div>";
+  }
+}
+
 // form submit handler
 function handleCitySearch(event) {
 
@@ -75,6 +98,9 @@ function handleCitySearch(event) {
   saveAppData();
   refreshApp();
 
+  // ********************
+  // Weather
+  // ********************
   // get search input values
   var searchString = $('input[name="city-input"]').val();
   if (!searchString.trim() ) {
@@ -160,6 +186,23 @@ function handleCitySearch(event) {
   });
   // end get coordinates and location name
 
+  // ********************
+  // Things to Do
+  // ********************
+
+  // prepare src attribute
+  var googleSearch4ThingsToDo = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDFM9Zvcj3uG-iHT16CNPqEEs7z3LhVUYA&cx=84bf6c59ec9dc5496&searchType=image&q=things to do " + city + " " + state + "&callback=handleThingsToDo";
+
+  // create the script element
+  var googleScriptEl4ThingsToDo = document.createElement("script");
+
+  // set the src and id attributes
+  googleScriptEl4ThingsToDo.src = googleSearch4ThingsToDo;
+  googleScriptEl4ThingsToDo.id = "googleSearch4ThingsToDo";
+
+  // append to body
+  document.body.appendChild(googleScriptEl4ThingsToDo);
+
 }
 
 function handleNewSearch() {
@@ -168,6 +211,8 @@ function handleNewSearch() {
   saveAppData();
   refreshApp();
 }
+
+
 
 
 
