@@ -25,7 +25,7 @@ $(document).ready(function () {
       const apiUrl =
         'https://api.openweathermap.org/data/2.5/weather?q=' +
         searchInput +
-        '&appid=5487746d0675bbfe431f4c709399c088';
+        '&units=imperial&appid=5487746d0675bbfe431f4c709399c088';
 
       // make request to the url
       fetch(apiUrl).then(function (response) {
