@@ -7,46 +7,11 @@
     <title>City Scout</title>
     <link rel="stylesheet" href="./assets/css/foundation.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-prototype.min.css">
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>-->
 </head>
 
 <body>
-    <!-- Info Banner For Announcements or Links -->
-    <!-- <a href="https://zurb.com/university/foundation-intro" class="docs-banner course-banner">
-      <div class="info">
-        <h5 class=""><strong>To master everything new in 6.4, along with the rest of Foundation register for our Aug 8th Webinar Class &rsaquo;</strong></h5>
-      </div>
-    </a> -->
-    
-    <!-- <a href="https://zurb.com/wired" id="notice">
-      <div class="info hide-for-small">
-        <div id="clockdiv" class="countdown">
-            <span class="timer-day days"></span>
-            <span class="timer-colon">:</span>
-          <span class="timer-hour hours"></span>
-          <span class="timer-colon">:</span>
-          <span class="timer-hour minutes"></span>
-          <span class="timer-colon">:</span>
-          <span class="timer-seconds seconds"></span>
-        </div>
-      </div>
-    </a> -->
-
-    
-    <!-- Start Top Bar -->
-    <div class="title-bar" data-responsive-toggle="mainNavigation" data-hide-for="medium">
-      <div class="title-bar-left">
-        <button class="menu-icon" type="button" data-toggle="mainNavigation"></button>
-        <div class="title-bar-title"></div>
-      </div>
-      <div class="title-bar-right">
-        City Scout
-      </div>
-    </div>
-    
+  
+  <!-- Header- sticky (for now) -->
     <div class="top-bar" id="mainNavigation">
       <div class="top-bar-left">
         <ul class="menu vertical medium-horizontal">
@@ -55,16 +20,14 @@
       </div>
       <div class="top-bar-right">
         <ul class="menu vertical medium-horizontal">
-          <li><a href="#">Three</a></li>
-          <li><a href="#">Four</a></li>
-          <li><a href="#">Five</a></li>
-          <li><a href="#">Six</a></li>
+          <button id="newSearch" class="button">New Search</button>
         </ul>
       </div>
     </div>
     <!-- End Top Bar -->
     
-    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+    <!-- Search Egine AKA: first page -->
+    <div class="orbit" id="first-page" role="region" aria-label="Favorite Space Pictures" data-orbit>
         <div class="hero-form">
             <h2>Where Will You Go Next?</h2>
             <h5>Type in any City and State to see travel details!</h5>
@@ -126,223 +89,74 @@
                     <option value="Wyoming">Wyoming</option>
                   </select>
                 </form>
-                <button type="submit" class="search-btn">
+                <button type= "submit" class= "search-btn" id= "searchBtn">
                   Search
                 </button>
             </form>
         </div>
     </div>
-    
     <br>
-    <div class="text-center">
-      <h2>City Scout</h2>
-      <hr>
-    </div>
-    
-    <article class="grid-container">
-      <div class="grid-x grid-margin-x small-up-2 medium-up-2 large-up-4" id="big-3">
-        <div class="cell">
-          <a href="#" class="button expanded">Weather</a>
-          <img class="thumbnail" src="https://placehold.it/500x600">
-          <h5>Nulla At Nulla Justo, Eget</h5>
-          <p>$400</p>
-        </div>
-        <div class="cell">
-          <a href="#" class="button expanded">Restaurants</a>
-          <img class="thumbnail" src="https://placehold.it/500x600">
-          <h5>Nulla At Nulla Justo, Eget</h5>
-          <p>$400</p>
-        </div>
-        <div class="cell">
-          <a href="#" class="button expanded">Hotels</a>
-          <img class="thumbnail" src="https://placehold.it/500x600">
-          <h5>Nulla At Nulla Justo, Eget</h5>
-          <p>$400</p>
-        </div>
-      </div>
-    
-        <hr>
-    
-        <div class="grid-x cell">
-          <div class="callout small-12 primary">
-            <h3>Really big special this week on items.</h3>
-          </div>
-        </div>
-    
-        <hr>
-    
-        <div class="text-center">
-          <h2>Some Other Neat Products</h2>
-          <hr>
-        </div>
-    
-        <div class="grid-x grid-margin-x small-up-2 medium-up-3 large-up-6">
-          <div class="cell">
-            <img class="thumbnail" src="https://placehold.it/300x400">
-            <h5>Nulla At Nulla Justo, Eget</h5>
-            <p>$400</p>
-            <a href="#" class="button small expanded hollow">Buy</a>
-          </div>
-          <div class="cell">
-            <img class="thumbnail" src="https://placehold.it/300x400">
-            <h5>Nulla At Nulla Justo, Eget</h5>
-            <p>$400</p>
-            <a href="#" class="button small expanded hollow">Buy</a>
-          </div>
-          <div class="cell">
-            <img class="thumbnail" src="https://placehold.it/300x400">
-            <h5>Nulla At Nulla Justo, Eget</h5>
-            <p>$400</p>
-            <a href="#" class="button small expanded hollow">Buy</a>
-          </div>
-          <div class="cell">
-            <img class="thumbnail" src="https://placehold.it/300x400">
-            <h5>Nulla At Nulla Justo, Eget</h5>
-            <p>$400</p>
-            <a href="#" class="button small expanded hollow">Buy</a>
-          </div>
-          <div class="cell">
-            <img class="thumbnail" src="https://placehold.it/300x400">
-            <h5>Nulla At Nulla Justo, Eget</h5>
-            <p>$400</p>
-            <a href="#" class="button small expanded hollow">Buy</a>
-          </div>
-          <div class="cell">
-            <img class="thumbnail" src="https://placehold.it/300x400">
-            <h5>Nulla At Nulla Justo, Eget</h5>
-            <p>$400</p>
-            <a href="#" class="button small expanded hollow">Buy</a>
-          </div>
-        </div>
-    
-        <hr>
-        <div class="grid-x align-bottom">
-          <div class="medium-4 cell">
-            <h4>Top Products</h4>
-            <div class="media-object">
-              <div class="media-object-section">
-                <img class="thumbnail" src="https://placehold.it/100x100">
-              </div>
-              <div class="media-object-section">
-                <h5>Nunc Eu Ullamcorper Orci</h5>
-                <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-              </div>
-            </div>
-            <div class="media-object">
-              <div class="media-object-section">
-                <img class="thumbnail" src="https://placehold.it/100x100">
-              </div>
-              <div class="media-object-section">
-                <h5>Nunc Eu Ullamcorper Orci</h5>
-                <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-              </div>
-            </div>
-            <div class="media-object">
-              <div class="media-object-section">
-                <img class="thumbnail" src="https://placehold.it/100x100">
-              </div>
-              <div class="media-object-section">
-                <h5>Nunc Eu Ullamcorper Orci</h5>
-                <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-              </div>
-            </div>
-          </div>
-          <div class="medium-4 cell">
-            <div class="media-object">
-              <div class="media-object-section">
-                <img class="thumbnail" src="https://placehold.it/100x100">
-              </div>
-              <div class="media-object-section">
-                <h5>Nunc Eu Ullamcorper Orci</h5>
-                <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-              </div>
-            </div>
-            <div class="media-object">
-              <div class="media-object-section">
-                <img class="thumbnail" src="https://placehold.it/100x100">
-              </div>
-              <div class="media-object-section">
-                <h5>Nunc Eu Ullamcorper Orci</h5>
-                <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-              </div>
-            </div>
-            <div class="media-object">
-              <div class="media-object-section">
-                <img class="thumbnail" src="https://placehold.it/100x100">
-              </div>
-              <div class="media-object-section">
-                <h5>Nunc Eu Ullamcorper Orci</h5>
-                <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-              </div>
-            </div>
-          </div>
-          <div class="medium-4 cell">
-            <div class="media-object">
-              <div class="media-object-section">
-                <img class="thumbnail" src="https://placehold.it/100x100">
-              </div>
-              <div class="media-object-section">
-                <h5>Nunc Eu Ullamcorper Orci</h5>
-                <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-              </div>
-            </div>
-            <div class="media-object">
-              <div class="media-object-section">
-                <img class="thumbnail" src="https://placehold.it/100x100">
-              </div>
-              <div class="media-object-section">
-                <h5>Nunc Eu Ullamcorper Orci</h5>
-                <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-              </div>
-            </div>
-            <div class="media-object">
-              <div class="media-object-section">
-                <img class="thumbnail" src="https://placehold.it/100x100">
-              </div>
-              <div class="media-object-section">
-                <h5>Nunc Eu Ullamcorper Orci</h5>
-                <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-    </article>
-    <br>
-        <footer class="callout large secondary">
-          <article class="grid-container">
-          <div class="grid-x">
-            <div class="large-4 cell">
-              <h5>Vivamus Hendrerit Arcu Sed Erat Molestie</h5>
-              <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit.</p>
-            </h4>
-          </div>
-          <div class="large-3 large-offset-2 cell">
-            <ul class="menu vertical">
-              <li><a href="#">One</a></li>
-              <li><a href="#">Two</a></li>
-              <li><a href="#">Three</a></li>
-              <li><a href="#">Four</a></li>
-            </ul>
-          </div>
-          <div class="large-3 cell">
-            <ul class="menu vertical">
-              <li><a href="#">One</a></li>
-              <li><a href="#">Two</a></li>
-              <li><a href="#">Three</a></li>
-              <li><a href="#">Four</a></li>
-            </ul>
-          </div>
-          </article>
-        </footer>
-    
 
+    <!-- Results Page AKA:Second Page -->
+    <div id="second-page">
+      <!-- Displays City Name -->
+      <div class="text-center">
+        <h2 id="selected-city"></h2>
+        <hr>
+      </div>
+      <!-- Contains Cards for Information -->
+      <article class="grid-container">
+        <div class="grid-x grid-margin-x small-up-2 medium-up-2 large-up-4" id="big-3">
+          <div class="card">
+            <!-- Weather Card -->
+            <div class ="card-divider">
+              <h4>Weather</h4>
+            </div>
+            <img src="assets/images/weather2.png"class="thumbnail" > 
+            <h5 id="results-container">Update content on line 139</h5>
+            <div class="weather">
+              <p class='weather-current'></p>
+              <p class="weather-min"></p>
+              <p class="weather-max"></p>
+              <p class="description"></p>
+            </div>
+          </div>
+          <div class="card cell">
+            <div class ="card-divider">
+              <h4>Restaurants</h4>
+            </div>
+            <img class="thumbnail" src="assets/images/resturant.png">
+            <h5>Update content on line 147</h5>
+            <p>subtext</p>
+          </div>
+          <div class="card">
+            <div class ="card-divider">
+              <h4>Hotels</h4>
+            </div>
+            <img class="thumbnail" src="assets/images/hotel.png">
+            <h5>Update Content on line 155</h5>
+            <p>subtext</p>
+          </div>
+          
+        </div>
+      
+          <hr>
+      
+          <div class="text-center">
+            <h2>Take a look!</h2>
+            <hr>
+          </div>
+      
+          <div class="grid-x grid-margin-x small-up-2 medium-up-3 large-up-6">
+            <div class="cell" id="photos-page"></div>
+          </div>             
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.js"></script>
-    <script>
-      $(document).foundation();
-    </script>
+    <script src="assets/js/weatherscript.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>$(document).foundation()</script>
   </body>
 
 </html>
