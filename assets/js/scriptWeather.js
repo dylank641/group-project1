@@ -14,9 +14,9 @@ $(document).ready(function () {
       const description = data.weather[0];
       const main = data.main;
 
-      $('.weather-current').html('Now: ' + main.temp);
-      $('.weather-min').html('Low: ' + main.temp_min);
-      $('.weather-max').html('High: ' + main.temp_max);
+      $('.weather-current').html('Now: ' + Math.round(main.temp));
+      $('.weather-min').html('Low: ' + Math.round(main.temp_min));
+      $('.weather-max').html('High: ' + Math.round(main.temp_max));
       $('.description').html(description.description);
     };
 
