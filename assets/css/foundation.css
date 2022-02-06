@@ -3366,12 +3366,13 @@ select {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  justify-content: center;
   -webkit-box-flex: 0;
   -webkit-flex: 0 1 auto;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
   padding: 1rem;
-  background: #e6e6e6; }
+  background: rgba(2, 0, 129, 0.945); }
   .card-divider > :last-child {
     margin-bottom: 0; }
 
