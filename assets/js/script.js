@@ -1,67 +1,91 @@
-var cityPhotosEl = document.querySelector('#photos-page');
-var firstPageEl = document.querySelector('#first-page');
-var secondPageEl = document.querySelector('#second-page');
-var selectedCityEl = document.querySelector('#selected-city');
+// ******************************
+// Global Variables
+// ******************************
 
-var printPhotos = function (data) {
-  for (var i = 0; i < data.length && i < 15; i++) {
-    var photo = document.createElement('img');
-    console.log(data[i].largeImageURL);
-    photo.setAttribute('src', data[i].largeImageURL);
-    photo.setAttribute('width', '600px');
-    photo.setAttribute("class", "test")
-    cityPhotosEl.appendChild(photo);
-  }
+// array to store app data
+var appData = [];
+
+// page sections
+var newSearchBtn = document.querySelector("#new-search");
+var searchPageEl = document.querySelector("#search-page");
+var citySearchEl = document.querySelector("#city-search");
+var resultsPageEl = document.querySelector("#results-page");
+var weatherResultsEl = document.querySelector("#weather-results");
+var thingsToDoResultsEl = document.querySelector("#things-to-do-results");
+var restaurantResultsEl = document.querySelector("#restaurant-results");
+var hotelResultsEl = document.querySelector("#hotel-results");
 
 
-  document.getElementById('newSearch').addEventListener("click", function(){
-    photo.remove();
+// ******************************
+// Functions
+// ******************************
 
-  })
-};
-
-var getPhotos = function (city, state) {
-  console.log(city, state);
-  city = city.replaceAll(' ', '+');
-  state = state.replaceAll(' ', '+');
-  placeUrl =
-    'https://pixabay.com/api/?key=25546994-2482c2e9e7a32b9d57d2159ef&q=' +
-    city +
-    '+' +
-    state +
-    '&image_type=photo&pretty=true';
-  console.log(placeUrl);
-  fetch(placeUrl).then(function (response) {
-    if (response.ok) {
-      console.log(response);
-      response.json().then(function (data) {
-        console.log(data);
-        printPhotos(data.hits);
-      });
-      
+// load app data
+var loadAppData = function() {
+  appData = localStorage.getItem("CityScoutAppData");
+  if(!appData) {
+    appData = [];
+    var appState = {
+      currentPage: "search-page"
     }
-  });
-};
+    appData.push(appState);
+    return false;
+  }
+  appData = JSON.parse(appData);
+}
 
-$('#searchBtn').on('click', function (event) {
-  var city = $('#city-input').val().trim();
-  var state = $('#state-input').val();
-  firstPageEl.className += ' hide';
-  secondPageEl.classList.remove('hide');
-  selectedCityEl.textContent = city.toUpperCase() + ', ' + state.toUpperCase();
+// store app data
+var saveAppData = function() {
+  localStorage.setItem("CityScoutAppData", JSON.stringify(appData));
+}
 
-  getPhotos(city, state);
+// refresh app view
+var refreshApp = function() {
+  switch (appData[0].currentPage) {
+    case "search-page":
+      // show the search page
+      searchPageEl.style.display = "flex";
+      resultsPageEl.style.display = "none";
+      break;
+    case "results-page":
+      // show the results page
+      searchPageEl.style.display = "none";
+      resultsPageEl.style.display = "flex";
+      break;
+  }
+}
+
+// form submit handler
+function handleCitySearch(event) {
+
+  // prevent default form behavior
   event.preventDefault();
-});
 
-$('#newSearch').on('click', function (event) {
-  secondPageEl.className += ' hide';
-  firstPageEl.classList.remove('hide');
-  
-});
+  // set the view state
+  appData[0].currentPage = "results-page"
+  saveAppData();
+  refreshApp();
 
-//removes previous search photos
-document.getElementById('newSearch').addEventListener("click", function(){
-  document.getElementById("photos-page").innerHTML = "";
+}
 
-})
+function handleNewSearch() {
+  // set the view state
+  appData[0].currentPage = "search-page"
+  saveAppData();
+  refreshApp();
+}
+
+
+
+
+// ******************************
+// Action Listeners
+// ******************************
+citySearchEl.addEventListener("submit", handleCitySearch);
+newSearchBtn.addEventListener("click", handleNewSearch);
+
+// ******************************
+// Function Calls
+// ******************************
+loadAppData();
+refreshApp();

@@ -11,150 +11,33 @@
 
 <body>
 
-  <!-- Header- sticky (for now) -->
-    <div class="top-bar" id="mainNavigation">
-      <div class="top-bar-left">
-        <ul class="menu vertical medium-horizontal">
-          <h2><li class="menu-text hide-for-small-only">City Scout</li></h2>
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu vertical medium-horizontal">
-          <button id="newSearch" class="button">New Search</button>
-        </ul>
-      </div>
+  <div class="top-bar">
+    <h1 class="site-title">City Scout</h1>
+    <button id="new-search" class="button new-search-btn">New Search</button>
+  </div>
+
+  <div id="search-page" class="orbit">
+    <div class="hero-form">
+      <h2>Where will you go next?</h2>
+      <h3>Type in a city to see travel details!</h3>
+      <form id="city-search">
+        <input type="text" id="city-input" name="city-input" placeholder="Enter city name" />
+        <button type= "submit" class= "search-btn" id= "searchBtn">Search</button>
+      </form>
     </div>
-    <!-- End Top Bar -->
+  </div>
 
-    <!-- Search Egine AKA: first page -->
-    <div class="orbit" id="first-page" role="region" aria-label="Favorite Space Pictures" data-orbit>
-        <div class="hero-form">
-            <h2>Where Will You Go Next?</h2>
-            <h5>Type in any City and State to see travel details!</h5>
-            <!--add form element-->
-            <form>
-                <form id="city-search">
-                  <input type="text" id="city-input" name="city-input" placeholder="Enter City Name" />
-                  <select id="state-input">
-                    <option value="Alabama">Alabama</option>
-                    <option value="Alaska">Alaska</option>
-                    <option value="Arizona">Arizona</option>
-                    <option value="Arkansas">Arkansas</option>
-                    <option value="California">California</option>
-                    <option value="Colorado">Colorado</option>
-                    <option value="Connecticut">Connecticut</option>
-                    <option value="Delaware">Delaware</option>
-                    <option value="District Of Columbia">District Of Columbia</option>
-                    <option value="Florida">Florida</option>
-                    <option value="Georgia">Georgia</option>
-                    <option value="Hawaii">Hawaii</option>
-                    <option value="Idaho">Idaho</option>
-                    <option value="Illinois">Illinois</option>
-                    <option value="Indiana">Indiana</option>
-                    <option value="Iowa">Iowa</option>
-                    <option value="Kansas">Kansas</option>
-                    <option value="Kentucky">Kentucky</option>
-                    <option value="Louisiana">Louisiana</option>
-                    <option value="Maine">Maine</option>
-                    <option value="Maryland">Maryland</option>
-                    <option value="Massachusetts">Massachusetts</option>
-                    <option value="Michigan">Michigan</option>
-                    <option value="Minnesota">Minnesota</option>
-                    <option value="Mississippi">Mississippi</option>
-                    <option value="Missouri">Missouri</option>
-                    <option value="Montana">Montana</option>
-                    <option value="Nebraska">Nebraska</option>
-                    <option value="Nevada">Nevada</option>
-                    <option value="New Hampshire">New Hampshire</option>
-                    <option value="New Jersey">New Jersey</option>
-                    <option value="New Mexico">New Mexico</option>
-                    <option value="New York">New York</option>
-                    <option value="North Carolina">North Carolina</option>
-                    <option value="North Dakota">North Dakota</option>
-                    <option value="Ohio">Ohio</option>
-                    <option value="Oklahoma">Oklahoma</option>
-                    <option value="Oregon">Oregon</option>
-                    <option value="Pennsylvania">Pennsylvania</option>
-                    <option value="Rhode Island">Rhode Island</option>
-                    <option value="South Carolina">South Carolina</option>
-                    <option value="South Dakota">South Dakota</option>
-                    <option value="Tennessee">Tennessee</option>
-                    <option value="Texas">Texas</option>
-                    <option value="Utah">Utah</option>
-                    <option value="Vermont">Vermont</option>
-                    <option value="Virginia">Virginia</option>
-                    <option value="Washington">Washington</option>
-                    <option value="West Virginia">West Virginia</option>
-                    <option value="Wisconsin">Wisconsin</option>
-                    <option value="Wyoming">Wyoming</option>
-                  </select>
-                </form>
-                <button type= "submit" class= "search-btn" id= "searchBtn">
-                  Search
-                </button>
-            </form>
-        </div>
-    </div>
-    <br>
+  <div id="results-page">
+    <div id="weather-results">Weather</div>
+    <div id="things-to-do-results">Things to Do</div>
+    <div id="restaurant-results">Restaurants</div>
+    <div id="hotel-results">Hotels</div>
 
-    <!-- Results Page AKA:Second Page -->
-    <div id="second-page">
-      <!-- Displays City Name -->
-      <div class="text-center">
-        <h2 id="selected-city"></h2>
-        <hr>
-      </div>
-      <!-- Contains Cards for Information -->
-      <article class="grid-container">
-        <div class="grid-x grid-margin-x small-up-2 medium-up-2 large-up-4" id="big-3">
-          <div class="card">
-            <!-- Weather Card -->
-            <div class ="card-divider">
-              <h4>Weather</h4>
-            </div>
-            <img src="assets/images/weather2.png"class="thumbnail" >
-            <h5 id="results-container">Update content on line 139</h5>
-            <div class="weather">
-              <p class='weather-current'></p>
-              <p class="weather-min"></p>
-              <p class="weather-max"></p>
-              <p class="description"></p>
-            </div>
-          </div>
-          <div class="card cell">
-            <div class ="card-divider">
-              <h4>Restaurants</h4>
-            </div>
-            <img class="thumbnail" src="assets/images/resturant.png">
-            <h5>Update content on line 147</h5>
-            <p>subtext</p>
-          </div>
-          <div class="card">
-            <div class ="card-divider">
-              <h4>Hotels</h4>
-            </div>
-            <img class="thumbnail" src="assets/images/hotel.png">
-            <h5>Update Content on line 155</h5>
-            <p>subtext</p>
-          </div>
-
-        </div>
-
-          <hr>
-
-          <div class="text-center">
-            <h2>Take a look!</h2>
-            <hr>
-          </div>
-
-          <div class="grid-x grid-margin-x small-up-2 medium-up-3 large-up-6">
-            <div class="cell" id="photos-page"></div>
-          </div>
+  </div>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.js"></script>
-    <script src="assets/js/scriptWeather.js"></script>
     <script src="assets/js/script.js"></script>
     <script>$(document).foundation()</script>
   </body>
