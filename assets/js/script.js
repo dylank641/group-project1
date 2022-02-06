@@ -9,8 +9,15 @@ var printPhotos = function (data) {
     console.log(data[i].largeImageURL);
     photo.setAttribute('src', data[i].largeImageURL);
     photo.setAttribute('width', '600px');
+    photo.setAttribute("class", "test")
     cityPhotosEl.appendChild(photo);
   }
+
+
+  document.getElementById('newSearch').addEventListener("click", function(){
+    photo.remove();
+
+  })
 };
 
 var getPhotos = function (city, state) {
@@ -31,8 +38,7 @@ var getPhotos = function (city, state) {
         console.log(data);
         printPhotos(data.hits);
       });
-      // };
-      // console.log(response);
+      
     }
   });
 };
@@ -47,3 +53,15 @@ $('#searchBtn').on('click', function (event) {
   getPhotos(city, state);
   event.preventDefault();
 });
+
+$('#newSearch').on('click', function (event) {
+  secondPageEl.className += ' hide';
+  firstPageEl.classList.remove('hide');
+  
+});
+
+//removes previous search photos
+document.getElementById('newSearch').addEventListener("click", function(){
+  document.getElementById("photos-page").innerHTML = "";
+
+})
