@@ -11,11 +11,13 @@
 
 <body>
 
+  <!-- Top Nav Bar -->
   <div class="top-bar">
     <h1 class="site-title">City Scout</h1>
     <button id="new-search" class="button new-search-btn">New Search</button>
   </div>
 
+  <!-- Search Page -->
   <div id="search-page" class="orbit">
     <div class="hero-form">
       <h2>Where will you go next?</h2>
@@ -27,11 +29,35 @@
     </div>
   </div>
 
+  <!-- Results Page -->
   <div id="results-page">
-    <div id="weather-results">Weather</div>
-    <div id="things-to-do-results">Things to Do</div>
-    <div id="restaurant-results">Restaurants</div>
-    <div id="hotel-results">Hotels</div>
+
+    <ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
+      <li class="accordion-item" data-accordion-item>
+        <a href="#" class="accordion-title">Weather:</a>
+        <div id="weather-results" class="accordion-content" data-tab-content>
+          <p>This is accordion content</p>
+        </div>
+      </li>
+      <li class="accordion-item" data-accordion-item>
+        <a href="#" class="accordion-title">Things to Do:</a>
+        <div id="things-to-do-results" class="accordion-content" data-tab-content>
+          <p>This is accordion content</p>
+        </div>
+      </li>
+      <li class="accordion-item" data-accordion-item>
+        <a href="#" class="accordion-title">Restaurants:</a>
+        <div id="restaurant-results" class="accordion-content" data-tab-content>
+          <p>This is accordion content</p>
+        </div>
+      </li>
+      <li class="accordion-item" data-accordion-item>
+        <a href="#" class="accordion-title">Hotels</a>
+        <div id="hotel-results" class="accordion-content" data-tab-content>
+          <p>This is accordion content</p>
+        </div>
+      </li>
+    </ul>
 
   </div>
 

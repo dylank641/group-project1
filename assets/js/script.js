@@ -84,6 +84,8 @@ function handleNewSearch() {
 citySearchEl.addEventListener("submit", handleCitySearch);
 newSearchBtn.addEventListener("click", handleNewSearch);
 
+
+
 // ******************************
 // Function Calls
 // ******************************
