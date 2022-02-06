@@ -78,6 +78,7 @@ body{
 
 .description {
     text-transform: capitalize;
+<<<<<<< HEAD
     }
 
 
@@ -92,3 +93,6 @@ body{
     width:27vw;
     margin:5px;
 }
+=======
+    }
+>>>>>>> 7b0288eb19db134d32973741d5642015b28e0228

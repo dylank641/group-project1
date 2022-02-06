@@ -3,7 +3,6 @@ var firstPageEl = document.querySelector('#first-page');
 var secondPageEl = document.querySelector('#second-page');
 var selectedCityEl = document.querySelector('#selected-city');
 
-
 var printPhotos = function (data) {
   for (var i = 0; i < data.length && i < 15; i++) {
     var photo = document.createElement('img');
