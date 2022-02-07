@@ -14,9 +14,9 @@ $(document).ready(function () {
       const description = data.weather[0];
       const main = data.main;
 
-      $('.weather-current').html('Now: ' + main.temp);
-      $('.weather-min').html('Low: ' + main.temp_min);
-      $('.weather-max').html('High: ' + main.temp_max);
+      $('.weather-current').html('Now: ' + Math.round(main.temp));
+      $('.weather-min').html('Low: ' + Math.round(main.temp_min));
+      $('.weather-max').html('High: ' + Math.round(main.temp_max));
       $('.description').html(description.description);
     };
 
@@ -25,7 +25,7 @@ $(document).ready(function () {
       const apiUrl =
         'https://api.openweathermap.org/data/2.5/weather?q=' +
         searchInput +
-        '&appid=5487746d0675bbfe431f4c709399c088';
+        '&units=imperial&appid=5487746d0675bbfe431f4c709399c088';
 
       // make request to the url
       fetch(apiUrl).then(function (response) {
