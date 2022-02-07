@@ -4,7 +4,7 @@ body{
 }
 
 .top-bar{
-    background-image: url("../images/photo-2.jpg");
+    background-image: url("../images/photo-3.jpg");
     background-size: cover;
     background-position: 80%;
     background-attachment: fixed;
@@ -30,7 +30,7 @@ body{
 
 /* Search Page */
 .orbit {
-    background-image: url("../images/photo-2.jpg");
+    background-image: url("../images/photo-3.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
