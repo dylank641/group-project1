@@ -87,6 +87,34 @@ function handleThingsToDo(response) {
   }
 }
 
+// handler for the Restaurants google search
+function handleRestaurants(response) {
+  console.log(response);
+  var restaurantsEl = document.getElementById("restaurant-results");
+  for (var i = 0; i < 5; i++) {
+    var item = response.items[i];
+    var index = i + 1;
+    var header = "<a href='" + item.image.contextLink + "' target='_blank'>Check it out</a>";
+    var imageURL = item.link;
+    var content = "<p>" + item.htmlTitle + "</p>";
+    restaurantsEl.innerHTML += "<div class='card'><div class='card-divider'>" + header + "</div><img src='" + imageURL + "'><div class='card-section'>" + content + "</div></div>";
+  }
+}
+
+// handler for the Hotels google search
+function handleHotels(response) {
+  console.log(response);
+  var hotelsEl = document.getElementById("hotel-results");
+  for (var i = 0; i < 5; i++) {
+    var item = response.items[i];
+    var index = i + 1;
+    var header = "<a href='" + item.image.contextLink + "' target='_blank'>Check it out</a>";
+    var imageURL = item.link;
+    var content = "<p>" + item.htmlTitle + "</p>";
+    hotelsEl.innerHTML += "<div class='card'><div class='card-divider'>" + header + "</div><img src='" + imageURL + "'><div class='card-section'>" + content + "</div></div>";
+  }
+}
+
 // form submit handler
 function handleCitySearch(event) {
 
@@ -202,6 +230,40 @@ function handleCitySearch(event) {
 
   // append to body
   document.body.appendChild(googleScriptEl4ThingsToDo);
+
+  // ********************
+  // Restaurants
+  // ********************
+
+  // prepare src attribute
+  var googleSearch4Restaurants = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDFM9Zvcj3uG-iHT16CNPqEEs7z3LhVUYA&cx=84bf6c59ec9dc5496&searchType=image&q=restaurants " + city + " " + state + "&callback=handleRestaurants";
+
+  // create the script element
+  var googleScriptEl4Restaurants = document.createElement("script");
+
+  // set the src and id attributes
+  googleScriptEl4Restaurants.src = googleSearch4Restaurants;
+  googleScriptEl4Restaurants.id = "googleSearch4Restaurants";
+
+  // append to body
+  document.body.appendChild(googleScriptEl4Restaurants);
+
+  // ********************
+  // Hotels
+  // ********************
+
+  // prepare src attribute
+  var googleSearch4Hotels = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDFM9Zvcj3uG-iHT16CNPqEEs7z3LhVUYA&cx=84bf6c59ec9dc5496&searchType=image&q=hotels " + city + " " + state + "&callback=handleHotels";
+
+  // create the script element
+  var googleScriptEl4Hotels = document.createElement("script");
+
+  // set the src and id attributes
+  googleScriptEl4Hotels.src = googleSearch4Hotels;
+  googleScriptEl4Hotels.id = "googleSearch4Hotels";
+
+  // append to body
+  document.body.appendChild(googleScriptEl4Hotels);
 
 }
 
