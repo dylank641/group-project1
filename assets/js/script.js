@@ -86,10 +86,11 @@ function handleThingsToDo(response) {
     var imageURL = item.link;
     
     var content = "<p>" + item.htmlTitle + "</p>";
-    thingsToDoEl.innerHTML += "<div class='card'><a href='" + item.image.contextLink + "' target='_blank'><div class='card-divider'>" + "Check it Out" + "</div></a><img class='bozo' src='" + imageURL + "'><div class='card-section'>" + content + "</div></div>";
+    thingsToDoEl.innerHTML += "<div class='card'><a href = '" + item.image.contextLink + "' target='_blank'><div class='card-section'>" + content + "</div></a><img class='bozo' src='" + imageURL + "'>"
+
   }
 }
-
+// "<div class='card'><div class='card-section'>" + content + "</div><img class='bozo' src='" + imageURL + "'><a href='" + item.image.contextLink + "' target='_blank'><div class='card-divider'>" + "Check it Out" + "</div></a>"
 // form submit handler
 function handleCitySearch(event) {
 
