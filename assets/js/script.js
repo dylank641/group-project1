@@ -14,6 +14,8 @@ var weatherResultsEl = document.querySelector("#weather-results");
 var thingsToDoResultsEl = document.querySelector("#things-to-do-results");
 var restaurantResultsEl = document.querySelector("#restaurant-results");
 var hotelResultsEl = document.querySelector("#hotel-results");
+var cityPhotosEl = document.querySelector('#photos-page');
+
 
 // weather elements
 var cityNameEl = $(".cityName");
@@ -190,7 +192,45 @@ function handleCitySearch(event) {
   // ********************
   // Things to Do
   // ********************
+  var printPhotos = function (data) {
+    for (var i = 0; i < data.length && i < 15; i++) {
+      var photo = document.createElement('img');
+      console.log(data[i].largeImageURL);
+      photo.setAttribute('src', data[i].largeImageURL);
+      photo.setAttribute('width', '600px');
+      photo.setAttribute("class", "test")
+      cityPhotosEl.appendChild(photo);
+    }
+    document.getElementById('new-search').addEventListener("click", function(){
+      photo.remove();
+  
+    })
+  
+  };
+  
+  var getPhotos = function (city) {
+    console.log(city);
+    city = city.replaceAll(' ', '+');
+    //state = state.replaceAll(' ', '+');
+    placeUrl =
+      'https://pixabay.com/api/?key=25546994-2482c2e9e7a32b9d57d2159ef&q=' +
+      city +
+      '&image_type=photo&pretty=true';
+    console.log(placeUrl);
+    fetch(placeUrl).then(function (response) {
+      if (response.ok) {
+        console.log(response);
+        response.json().then(function (data) {
+          console.log(data);
+          printPhotos(data.hits);
+        });
+        
+      }
+    });
+  };
+  getPhotos(city);
 
+ 
   // prepare src attribute
   var googleSearch4ThingsToDo = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDFM9Zvcj3uG-iHT16CNPqEEs7z3LhVUYA&cx=84bf6c59ec9dc5496&searchType=image&q=things to do " + city + " " + state + "&callback=handleThingsToDo";
 
@@ -206,13 +246,17 @@ function handleCitySearch(event) {
 
 }
 
+
+
 function handleNewSearch() {
   // set the view state
   appData[0].currentPage = "search-page"
   saveAppData();
   refreshApp();
+  document.getElementById("photos-page").innerHTML = "";
 }
 
+//clears things to do section when new search is clicked
 document.getElementById("new-search").addEventListener("click", function(){
   document.getElementById("things-to-do-results").innerHTML = "";
 })

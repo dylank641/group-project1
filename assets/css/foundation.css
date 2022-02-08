@@ -88,6 +88,9 @@ button,
 select {
   text-transform: none; }
 
+.margin-top{
+  margin-top: 20px;
+}
 button,
 [type="button"],
 [type="reset"],

@@ -89,7 +89,6 @@ body{
     font-size: 18px;
 }
 
-
 #things-to-do-results {
     display: flex;
     flex-wrap: wrap;
@@ -175,3 +174,43 @@ body{
     margin: 5px;
 }
 
+#photos-page{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.test{
+    width:27vw;
+    margin:5px;
+}
+
+@media screen and (max-width: 1500px){
+    .bozo{
+        width: 50vw;
+    }
+    .hero-form{
+        width: 60vw;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .bozo{
+        width: 70vw;
+    }
+    .hero-form{
+        width: 70vw;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .bozo{
+        width: 90vw;
+
+    }
+    .hero-form{
+        width: 80vw;
+    }
+}
