@@ -1,84 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>City Scout</title>
     <link rel="stylesheet" href="./assets/css/foundation.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
+  </head>
 
-<body>
-
-  <!-- Top Nav Bar -->
-  <div class="top-bar">
-    <h1 class="site-title">City Scout</h1>
-    <button id="new-search" class="button new-search-btn">New Search</button>
-  </div>
-
-  <!-- Search Page -->
-  <div id="search-page" class="orbit">
-    <div class="hero-form">
-      <h2>Where will you go next?</h2>
-      <h3>Type in a city to see travel details!</h3>
-      <form id="city-search">
-        <input type="text" id="city-input" name="city-input" placeholder="Enter city name" />
-        <button type= "submit" class= "search-btn" id= "searchBtn">Search</button>
-      </form>
+  <body>
+    <!-- Top Nav Bar -->
+    <div class="top-bar">
+      <h1 class="site-title">City Scout</h1>
+      <button id="new-search" class="button new-search-btn">New Search</button>
     </div>
-  </div>
 
-  <!-- Results Page -->
-  <div id="results-page">
+    <!-- Search Page -->
+    <div id="search-page" class="orbit">
+      <div class="hero-form">
+        <h2>Where will you go next?</h2>
+        <h3>Type in a city to see travel details!</h3>
+        <form id="city-search">
+          <input
+            type="text"
+            id="city-input"
+            name="city-input"
+            placeholder="Enter city name"
+          />
+          <button type="submit" class="search-btn" id="searchBtn">
+            Search
+          </button>
+        </form>
+      </div>
+    </div>
 
-    <ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
-      <li class="accordion-item" data-accordion-item>
-        <a href="#" class="accordion-title">Weather:</a>
-        <div id="weather-results" class="accordion-content" data-tab-content>
-          <div>
-            <h5 class = "cityName">...</h5>
+    <!-- Results Page -->
+    <div id="results-page">
+      <ul
+        class="accordion"
+        data-accordion
+        data-multi-expand="true"
+        data-allow-all-closed="true"
+      >
+        <li class="accordion-item" data-accordion-item>
+          <a href="#" class="accordion-title">Weather:</a>
+          <div id="weather-results" class="accordion-content" data-tab-content>
+            <div>
+              <h5 class="cityName">...</h5>
+            </div>
+            <div class="weather-cards">
+              <h5 class="card" id="cityTemp">Temp: ...</h5>
+              <h5 class="card" id="cityHigh"></h5>
+              <h5 class="card" id="cityLow"></h5>
+              <h5 class="card" id="cityDescription"></h5>
+              <!-- <h5 class="card" id="cityIcon"></h5> -->
+              <h5 class="card" id="cityWind">Wind: ...</h5>
+              <h5 class="card" id="cityHumidity">Humidity: ...</h5>
+            </div>
           </div>
-          <div class="weather-cards">
-            <h5 class="card" id="cityTemp">Temp: ...</h5>
-            <h5 class="card" id="cityWind">Wind: ...</h5>
-            <h5 class="card" id="cityHumidity">Humidity: ...</h5>
-            <h5 class="card" id="cityUVIndex">UV Index: ...</h5>
+        </li>
+        <li class="accordion-item" data-accordion-item id="ttd">
+          <a href="#" class="accordion-title">Things to Do:</a>
+          <div
+            id="things-to-do-results"
+            class="accordion-content"
+            data-tab-content
+          ></div>
+        </li>
+        <li class="accordion-item" data-accordion-item>
+          <a href="#" class="accordion-title">Restaurants:</a>
+          <div
+            id="restaurant-results"
+            class="accordion-content"
+            data-tab-content
+          >
+            <p>This is accordion content</p>
           </div>
-        </div>
-      </li>
-      <li class="accordion-item" data-accordion-item id="ttd">
-        <a href="#" class="accordion-title">Things to Do:</a>
-        <div id="things-to-do-results" class="accordion-content" data-tab-content></div>
-      </li>
-      <li class="accordion-item" data-accordion-item>
-        <a href="#" class="accordion-title">Restaurants:</a>
-        <div id="restaurant-results" class="accordion-content" data-tab-content>
-          <p>This is accordion content</p>
-        </div>
-      </li>
-      <li class="accordion-item" data-accordion-item>
-        <a href="#" class="accordion-title">Hotels</a>
-        <div id="hotel-results" class="accordion-content" data-tab-content>
-          <p>This is accordion content</p>
-        </div>
-      </li>
-    </ul>
-
-  </div>
-  <div class="margin-top">
-    <div class="text-center">
-      <!--<h2>Take a look!</h2>-->
-      <img src="./assets/images/gl.svg">
-      <hr>
+        </li>
+        <li class="accordion-item" data-accordion-item>
+          <a href="#" class="accordion-title">Hotels</a>
+          <div id="hotel-results" class="accordion-content" data-tab-content>
+            <p>This is accordion content</p>
+          </div>
+        </li>
+      </ul>
     </div>
-  
-    <div class="grid-x grid-margin-x small-up-2 medium-up-3 large-up-6">
-      <div class="cell" id="photos-page"></div>
-    </div>
-  </div>
-  
+    <div class="margin-top">
+      <div class="text-center">
+        <!--<h2>Take a look!</h2>-->
+        <img src="./assets/images/gl.svg" />
+        <hr />
+      </div>
 
+      <div class="grid-x grid-margin-x small-up-2 medium-up-3 large-up-6">
+        <div class="cell" id="photos-page"></div>
+      </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
@@ -86,7 +103,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="assets/js/scriptWeather.js"></script>
     <script src="assets/js/script.js"></script>
-    <script>$(document).foundation()</script>
+    <script>
+      $(document).foundation();
+    </script>
   </body>
-
 </html>
