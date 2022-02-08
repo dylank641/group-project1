@@ -93,6 +93,35 @@ function handleThingsToDo(response) {
 
   }
 }
+
+// handler for the Restaurants google search
+function handleRestaurants(response) {
+  console.log(response);
+  var restaurantsEl = document.getElementById("restaurant-results");
+  for (var i = 0; i < 5; i++) {
+    var item = response.items[i];
+    var index = i + 1;
+    var header = "<a href='" + item.image.contextLink + "' target='_blank'>Check it out</a>";
+    var imageURL = item.link;
+    var content = "<p>" + item.htmlTitle + "</p>";
+    restaurantsEl.innerHTML += "<div class='card'><a href = '" + item.image.contextLink + "' target='_blank'><div class='card-section'>" + content + "</div></a><img class='bozo' src='" + imageURL + "'>"
+  }
+}
+
+// handler for the Hotels google search
+function handleHotels(response) {
+  console.log(response);
+  var hotelsEl = document.getElementById("hotel-results");
+  for (var i = 0; i < 5; i++) {
+    var item = response.items[i];
+    var index = i + 1;
+    var header = "<a href='" + item.image.contextLink + "' target='_blank'>Check it out</a>";
+    var imageURL = item.link;
+    var content = "<p>" + item.htmlTitle + "</p>";
+    hotelsEl.innerHTML += "<div class='card'><a href = '" + item.image.contextLink + "' target='_blank'><div class='card-section'>" + content + "</div></a><img class='bozo' src='" + imageURL + "'>"
+  }
+}
+
 // form submit handler
 function handleCitySearch(event) {
 
@@ -192,9 +221,7 @@ function handleCitySearch(event) {
   });
   // end get coordinates and location name
 
-  // ********************
-  // Things to Do
-  // ********************
+  
   var printPhotos = function (data) {
     for (var i = 0; i < data.length && i < 15; i++) {
       var photo = document.createElement('img');
@@ -233,7 +260,9 @@ function handleCitySearch(event) {
   };
   getPhotos(city);
 
- 
+  // ********************
+  // Things to Do
+  // ********************
   // prepare src attribute
   var googleSearch4ThingsToDo = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDFM9Zvcj3uG-iHT16CNPqEEs7z3LhVUYA&cx=84bf6c59ec9dc5496&searchType=image&q=things to do " + city + " " + state + "&callback=handleThingsToDo";
 
@@ -246,6 +275,40 @@ function handleCitySearch(event) {
 
   // append to body
   document.body.appendChild(googleScriptEl4ThingsToDo);
+
+    // ********************
+  // Restaurants
+  // ********************
+
+  // prepare src attribute
+  var googleSearch4Restaurants = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDFM9Zvcj3uG-iHT16CNPqEEs7z3LhVUYA&cx=84bf6c59ec9dc5496&searchType=image&q=restaurants " + city + " " + state + "&callback=handleRestaurants";
+
+  // create the script element
+  var googleScriptEl4Restaurants = document.createElement("script");
+
+  // set the src and id attributes
+  googleScriptEl4Restaurants.src = googleSearch4Restaurants;
+  googleScriptEl4Restaurants.id = "googleSearch4Restaurants";
+
+  // append to body
+  document.body.appendChild(googleScriptEl4Restaurants);
+
+  // ********************
+  // Hotels
+  // ********************
+
+  // prepare src attribute
+  var googleSearch4Hotels = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDFM9Zvcj3uG-iHT16CNPqEEs7z3LhVUYA&cx=84bf6c59ec9dc5496&searchType=image&q=hotels " + city + " " + state + "&callback=handleHotels";
+
+  // create the script element
+  var googleScriptEl4Hotels = document.createElement("script");
+
+  // set the src and id attributes
+  googleScriptEl4Hotels.src = googleSearch4Hotels;
+  googleScriptEl4Hotels.id = "googleSearch4Hotels";
+
+  // append to body
+  document.body.appendChild(googleScriptEl4Hotels);
 
 }
 
