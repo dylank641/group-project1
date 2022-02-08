@@ -15,6 +15,7 @@ var thingsToDoResultsEl = document.querySelector("#things-to-do-results");
 var restaurantResultsEl = document.querySelector("#restaurant-results");
 var hotelResultsEl = document.querySelector("#hotel-results");
 var cityPhotosEl = document.querySelector('#photos-page');
+var galleryEl = document.querySelector("#gallery");
 
 
 // weather elements
@@ -57,11 +58,13 @@ var refreshApp = function() {
       // show the search page
       searchPageEl.style.display = "flex";
       resultsPageEl.style.display = "none";
+      galleryEl.style.display = "none";
       break;
     case "results-page":
       // show the results page
       searchPageEl.style.display = "none";
       resultsPageEl.style.display = "flex";
+      galleryEl.style.display = "inline";
       break;
   }
 }
@@ -90,7 +93,6 @@ function handleThingsToDo(response) {
 
   }
 }
-// "<div class='card'><div class='card-section'>" + content + "</div><img class='bozo' src='" + imageURL + "'><a href='" + item.image.contextLink + "' target='_blank'><div class='card-divider'>" + "Check it Out" + "</div></a>"
 // form submit handler
 function handleCitySearch(event) {
 
