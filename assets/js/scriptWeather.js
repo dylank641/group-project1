@@ -14,10 +14,11 @@ $(document).ready(function () {
       const description = data.weather[0];
       const main = data.main;
 
-      $('.weather-current').html('Now: ' + Math.round(main.temp));
-      $('.weather-min').html('Low: ' + Math.round(main.temp_min));
-      $('.weather-max').html('High: ' + Math.round(main.temp_max));
-      $('.description').html(description.description);
+      $('#cityTemp').html('Now: ' + Math.round(main.temp));
+      $('#cityHigh').html('Low: ' + Math.round(main.temp_min));
+      $('#cityLow').html('High: ' + Math.round(main.temp_max));
+      $('#cityDescription').html(description.description);
+      // $('#cityIcon').html(description.icon);
     };
 
     const getCityWeather = function () {
