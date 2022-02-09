@@ -117,7 +117,6 @@ function handleCitySearch(event) {
   // prevent default form behavior
   event.preventDefault();
   // set the view state
-  // appData[0].currentPage = "results-page"
   var searchString = searchStringEl.value.trim();
 
   if (!searchString) {
@@ -327,8 +326,6 @@ var displayPriorSearches = function () {
 function handleNewSearch(event) {
   // set the view state
   searchStringEl.value = "";
-  // event.preventDefault();
-  // showSearchPg();
   location.reload();
 };
 
