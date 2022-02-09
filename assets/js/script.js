@@ -65,6 +65,8 @@ var refreshApp = function() {
       searchPageEl.style.display = "none";
       resultsPageEl.style.display = "flex";
       galleryEl.style.display = "inline";
+      appData[0].currentPage = "search-page"; // set it back to search page so when user refreshes page will go back to search page.
+      saveAppData(); // dont forget to save app data after changing anything.
       break;
   }
 }
@@ -320,6 +322,7 @@ function handleNewSearch() {
   saveAppData();
   refreshApp();
   document.getElementById("photos-page").innerHTML = "";
+  $('input[name="city-input"]').val(""); // clear out the search box.
 }
 
 //clears things to do section when new search is clicked
