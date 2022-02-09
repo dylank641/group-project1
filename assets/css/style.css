@@ -240,3 +240,21 @@ body {
     width: 80vw;
   }
 }
+
+.upper-case {
+    text-transform: capitalize;
+}
+
+.prior-search-btn {
+    background-color: rgb(190, 187, 187);
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    margin-bottom: 5px;
+    font-size: 13px;
+    width: 100px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+
