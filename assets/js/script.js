@@ -342,9 +342,6 @@ newSearchBtn.addEventListener("click", handleNewSearch);
 priorSearchesEl.addEventListener("click", searchBtnHandler);
 
 
-showSearchPg();
-displayPriorSearches();
-
 // ******************************
 // Function Calls
 // ******************************
