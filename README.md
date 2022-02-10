@@ -7,7 +7,7 @@
 
 ### Click this link to check out City Scout: https://dylank641.github.io/group-project1/
 
-![image](./assets/images/home page.png)
+![image](./assets/images/home-page.png)
 
 
-![image](./assets/images/results page.png)
+![image](./assets/images/results-page.png)
