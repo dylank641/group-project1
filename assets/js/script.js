@@ -357,7 +357,6 @@ citySearchEl.addEventListener("submit", handleCitySearch);
 newSearchBtn.addEventListener("click", handleNewSearch);
 priorSearchesEl.addEventListener("click", searchBtnHandler);
 
-
 showSearchPg();
 displayPriorSearches();
 
